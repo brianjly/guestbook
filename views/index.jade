@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='/bin/materialize.css', rel='stylesheet')
+
+  body
+    h1 Jade - node template engine
+    #container.col
+      if youAreUsingJade
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.
+    .card.small
+      h1 hello
+
+    include ./api/data
