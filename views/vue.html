@@ -1,21 +1,18 @@
-<html>
-<head>
-
-</head>
-
-<body>
 
   <div id="demo">
     <ul>
-      <li v-for="record in commits">
+      <li v-for="record in records">
 
-        Name: <span class="author">{{record.name}}</span><br>
+        Name: <span>{{record.name}}</span><br>
         Message: <span>{{record.message}}</span>
       </li>
     </ul>
   </div>
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.min.js"></script>
+
+<!-----------------------------------------------Vue JS-->
+
   <script type="text/javaScript">
   var apiURL = 'http://nodeguestbook.herokuapp.com/api/data'
 
@@ -39,14 +36,10 @@
         var self = this
         xhr.open('GET', apiURL)
         xhr.onload = function () {
-          self.commits = JSON.parse(xhr.responseText)
+          self.records = JSON.parse(xhr.responseText)
         }
         xhr.send()
       }
     }
   })
   </script>
-</body>
-
-
-</html>
