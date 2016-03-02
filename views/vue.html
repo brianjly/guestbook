@@ -11,7 +11,8 @@
     <ul>
       <li v-for="record in commits">
 
-        by <span class="author">{{record.commit.name}}</span>
+        Name: <span class="author">{{record.name}}</span>
+        Message: <span>{{record.message}}</span>
       </li>
     </ul>
   </div>
