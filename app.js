@@ -12,9 +12,10 @@ var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
+var url = 'mongodb://localhost:27017/test';
 
 //MONGO/Mongoose
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect('mongodb://localhost/rest_test');
 
 //EXPRESS
 

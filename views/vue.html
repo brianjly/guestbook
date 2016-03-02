@@ -1,0 +1,53 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+  <div id="demo">
+    <h1>Latest Vue.js Commits</h1>
+
+    <ul>
+      <li v-for="record in commits">
+
+        by <span class="author">{{record.commit.name}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.min.js"></script>
+  <script type="text/javaScript">
+  var apiURL = 'http://nodeguestbook.herokuapp.com/api/data'
+
+  var demo = new Vue({
+
+    el: '#demo',
+
+    data: {
+
+      commits: null
+    },
+
+    created: function () {
+      this.fetchData()
+    },
+
+
+    methods: {
+      fetchData: function () {
+        var xhr = new XMLHttpRequest()
+        var self = this
+        xhr.open('GET', apiURL)
+        xhr.onload = function () {
+          self.commits = JSON.parse(xhr.responseText)
+        }
+        xhr.send()
+      }
+    }
+  })
+  </script>
+</body>
+
+
+</html>
