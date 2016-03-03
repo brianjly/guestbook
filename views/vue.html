@@ -27,6 +27,7 @@
 
     <button v-on="click:addGuest">Submit</button>
 
+    {{this.guestresponse}}
   </form>
 
 
@@ -63,7 +64,6 @@
       },
 
       addGuest: function () {
-        alert("I am an alert box!");
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
         xhp.setRequestHeader("Content-type", "application/json");
