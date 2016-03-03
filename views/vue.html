@@ -15,9 +15,25 @@
     </ul>
   </div>
 
+  <div class="panel-heading">
+    <h3>Add an Message</h3>
+  </div>
+
+  <div>
+
+    <input placeholder="Enter your Name" v-model="guest.name"><br><br>
+
+    <textarea placeholder="Leave a Message" v-model="guest.message"></textarea><br><br>
+
+    <button v-on="click: addGuest">Submit</button>
+
+  </div>
+
+
+
   <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.min.js"></script>
 
-<!-----------------------------------------------Vue JS-->
+<!----------------------------------------------Vue JS-->
 
   <script type="text/javaScript">
   var apiURL = 'http://nodeguestbook.herokuapp.com/api/data'
@@ -27,8 +43,7 @@
     el: '#demo',
 
     data: {
-
-      records: null
+      guests: null
     },
 
     created: function () {
@@ -42,11 +57,25 @@
         var self = this
         xhr.open('GET', apiURL)
         xhr.onload = function () {
-          self.records = JSON.parse(xhr.responseText)
+          self.guests = JSON.parse(xhr.responseText)
         }
         xhr.send()
+      },
+
+      addGuest: function() {
+        if(this.guest.name) {
+          this.$http.post(apiURL, this.guest).success(function(response) {
+            this.guests.push(this.guest);
+            console.log("Event added!");
+          }).error(function(error) {
+            console.log(error);
+          });
+
+
+        }
       }
     }
+
   })
   </script>
 </body>
