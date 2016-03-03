@@ -21,9 +21,9 @@
 
   <form>
 
-    <input placeholder="Enter your Name" v-model="guest.name"><br><br>
+    <input placeholder="Enter your Name" v-model="guestresponse.name"><br><br>
 
-    <textarea placeholder="Leave a Message" v-model="guest.message"></textarea><br><br>
+    <textarea placeholder="Leave a Message" v-model="guestresponse.message"></textarea><br><br>
 
     <button v-on="click:addGuest">Submit</button>
 
@@ -62,12 +62,12 @@
         xhr.send()
       },
 
-      addGuest: function() {
+      addGuest: function () {
         console.log('successfully called');
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
         xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(this.guest)
+        xhp.send(this.guestresponse)
 
       }
     }
