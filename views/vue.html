@@ -21,13 +21,13 @@
 
   <form>
 
-    <input placeholder="Enter your Name" v-model="guestresponse.name"><br><br>
+    <input placeholder="Enter your Name" v-model="newguest.name"><br><br>
 
-    <textarea placeholder="Leave a Message" v-model="guestresponse.message"></textarea><br><br>
+    <textarea placeholder="Leave a Message" v-model="newguest.message"></textarea><br><br>
 
     <button v-on="click:addGuest">Submit</button>
 
-    {{guestresponse.message}}
+    {{this.newguest}}
   </form>
 
 
@@ -44,8 +44,13 @@
     el: '#demo',
 
     data: {
-      guests: null
-    },
+      guests: null,
+
+      newguest:{
+        name:'',
+        message:''
+        }
+      },
 
     created: function () {
       this.fetchData()
@@ -67,7 +72,7 @@
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
         xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(this.guestresponse)
+        xhp.send(this.newguest)
 
       }
     }
