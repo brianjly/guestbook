@@ -25,9 +25,10 @@
 
       <textarea placeholder="Leave a Message" v-model="newGuest.message"></textarea><br><br>
 
-      <button v-on="click:addGuest">Submit</button>
+      <button v-on:click="addGuest">Submit</button>
 
       {{newGuest.name}}
+      {{newGuest.message}}
 
 
     </form>
@@ -73,8 +74,13 @@
 
       addGuest: function () {
 
-        this.newGuest.name = 'hello'
-        this.newGuest.message = 'its me'
+        var xhp = new XMLHttpRequest()
+        xhp.open('POST', apiURL, true)
+        xhp.setRequestHeader("Content-type", "application/json");
+        xhp.send(this.newGuest)
+
+        this.newGuest.name = ''
+        this.newGuest.message = ''
 
       }
     }
