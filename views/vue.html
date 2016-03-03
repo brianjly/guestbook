@@ -81,6 +81,7 @@
         xhr.open('GET', apiURL)
         xhr.onload = function () {
           self.guests = JSON.parse(xhr.responseText)
+          self.guests.reverse()
         }
         xhr.send()
       },
