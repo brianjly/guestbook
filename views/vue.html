@@ -21,18 +21,16 @@
 
     <form>
 
-      <input placeholder="Enter your Name" v-model="newguest.name"><br><br>
+      <input placeholder="Enter your Name" v-model="newGuest.name"><br><br>
 
-      <textarea placeholder="Leave a Message" v-model="newguest.message"></textarea><br><br>
+      <textarea placeholder="Leave a Message" v-model="newGuest.message"></textarea><br><br>
 
       <button v-on="click:addGuest">Submit</button>
 
-      {{newguest.name}}
+      {{this.newGuest}}
 
     </form>
   </div>
-
-
 
 
 
