@@ -74,10 +74,8 @@
 
       addGuest: function () {
 
-        var xhp = new XMLHttpRequest()
-        xhp.open('POST', apiURL, true)
-        xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(this.newGuest)
+        guests.push(this.newGuest)
+
 
         this.newGuest.name = ''
         this.newGuest.message = ''
