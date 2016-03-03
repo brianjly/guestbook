@@ -77,7 +77,7 @@
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL)
         xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(this.newGuest)
+        xhp.send(JSON.stringify(this.newGuest))
 
         this.newGuest.name = ''
         this.newGuest.message = ''
