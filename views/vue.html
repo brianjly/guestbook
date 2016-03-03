@@ -80,10 +80,7 @@
         alert(newGuest.name)
         alert(newGuest.message)
 
-        var xhp = new XMLHttpRequest()
-        xhp.open('POST', apiURL)
-        xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(post)
+      
 
         this.newGuest.name = ''
         this.newGuest.message = ''
