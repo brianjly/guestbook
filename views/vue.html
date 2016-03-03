@@ -27,7 +27,8 @@
 
       <button v-on="click:addGuest">Submit</button>
 
-      {{this.newGuest}}
+      {{newGuest.name}}
+      {{newGuest.message}}
 
     </form>
   </div>
@@ -75,7 +76,7 @@
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
         xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(this.newguest)
+        xhp.send(this.newGuest)
 
         this.newGuest.name = ''
         this.newGuest.message = ''
