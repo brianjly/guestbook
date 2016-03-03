@@ -25,7 +25,7 @@
 
     <textarea placeholder="Leave a Message" v-model="guest.message"></textarea><br><br>
 
-    <button v-on="click: addGuest">Submit</button>
+    <button v-on="click:addGuest">Submit</button>
 
   </div>
 
@@ -63,16 +63,11 @@
       },
 
       addGuest: function() {
-        if(this.guest.name) {
-          this.$http.post(apiURL, this.guest).success(function(response) {
-            this.guests.push(this.guest);
-            console.log("Event added!");
-          }).error(function(error) {
-            console.log(error);
-          });
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', apiURL, true)
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(this.guest)
 
-
-        }
       }
     }
 
