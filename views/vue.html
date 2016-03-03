@@ -13,22 +13,26 @@
         Message: <span>{{guest.message}}</span>
       </li>
     </ul>
+
+
+    <div class="panel-heading">
+      <h3>Add an Message</h3>
+    </div>
+
+    <form>
+
+      <input placeholder="Enter your Name" v-model="newguest.name"><br><br>
+
+      <textarea placeholder="Leave a Message" v-model="newguest.message"></textarea><br><br>
+
+      <button v-on="click:addGuest">Submit</button>
+
+      {{newguest.name}}
+
+    </form>
   </div>
 
-  <div class="panel-heading">
-    <h3>Add an Message</h3>
-  </div>
 
-  <form>
-
-    <input placeholder="Enter your Name" v-model="newguest.name"><br><br>
-
-    <textarea placeholder="Leave a Message" v-model="newguest.message"></textarea><br><br>
-
-    <button v-on="click:addGuest">Submit</button>
-
-    {{newguest.name}}
-  </form>
 
 
 
