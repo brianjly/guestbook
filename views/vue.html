@@ -64,10 +64,10 @@
 
       addGuest: function() {
         console.log('successfully called');
-        var xhr = new XMLHttpRequest()
-        xhr.open('POST', apiURL, true)
-        xhr.setRequestHeader("Content-type", "application/json");
-        xhr.send(this.guest)
+        var xhp = new XMLHttpRequest()
+        xhp.open('POST', apiURL, true)
+        xhp.setRequestHeader("Content-type", "application/json");
+        xhp.send(this.guest)
 
       }
     }
