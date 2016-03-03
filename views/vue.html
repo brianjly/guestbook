@@ -19,7 +19,7 @@
     <h3>Add an Message</h3>
   </div>
 
-  <div>
+  <form>
 
     <input placeholder="Enter your Name" v-model="guest.name"><br><br>
 
@@ -27,7 +27,7 @@
 
     <button v-on="click:addGuest">Submit</button>
 
-  </div>
+  </form>
 
 
 
@@ -63,6 +63,7 @@
       },
 
       addGuest: function() {
+        console.log('successfully called')
         var xhr = new XMLHttpRequest()
         xhr.open('POST', apiURL, true)
         xhr.setRequestHeader("Content-type", "application/json");
