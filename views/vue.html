@@ -41,6 +41,7 @@
 <!----------------------------------------------Vue JS-->
 
   <script type="text/javaScript">
+
   var apiURL = 'http://nodeguestbook.herokuapp.com/api/data'
 
   var demo = new Vue({
@@ -76,12 +77,12 @@
 
       addGuest: function () {
 
-        alert(this.newGuest)
+        var post = JSON.parse(this.newGuest)
 
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
         xhp.setRequestHeader("Content-type", "application/json");
-        xhp.send(this.newGuest)
+        xhp.send(post)
 
         this.newGuest.name = ''
         this.newGuest.message = ''
