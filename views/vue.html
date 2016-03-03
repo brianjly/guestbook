@@ -48,12 +48,14 @@
     el: '#demo',
 
     data: {
+
       guests: null,
 
       newGuest: {
         name:'',
         message:''
         }
+
       },
 
     created: function () {
@@ -74,7 +76,7 @@
 
       addGuest: function () {
 
-        console.log(this.newGuest)
+        alert('this.newGuest')
 
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
