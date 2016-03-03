@@ -77,12 +77,11 @@
 
       addGuest: function () {
 
-        var post = JSON.parse(this.newGuest)
-
-        alert(post)
+        alert(newGuest.name)
+        alert(newGuest.message)
 
         var xhp = new XMLHttpRequest()
-        xhp.open('POST', apiURL, true)
+        xhp.open('POST', apiURL)
         xhp.setRequestHeader("Content-type", "application/json");
         xhp.send(post)
 
