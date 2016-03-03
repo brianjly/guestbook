@@ -79,6 +79,8 @@
 
         var post = JSON.parse(this.newGuest)
 
+        alert(post)
+
         var xhp = new XMLHttpRequest()
         xhp.open('POST', apiURL, true)
         xhp.setRequestHeader("Content-type", "application/json");
