@@ -22,29 +22,29 @@
                </span>
              </div>
            </div>
-           <div class="card-action">
 
-             <div class="panel-heading">
-               <h3>Add an Message</h3>
-             </div>
-
-             <form>
-
-               <input class ="input-field" placeholder="Enter your Name" v-model="newGuest.name"><br><br>
-
-               <textarea placeholder="Leave a Message" v-model="newGuest.message"></textarea><br><br>
-
-               <button v-on:click="addGuest">Submit</button>
-
-             </form>
-
-           </div>
          </div>
        </div>
      </div>
 
     </div>
+    <div class="card-action">
 
+      <div class="panel-heading">
+        <h3>Add an Message</h3>
+      </div>
+
+      <form>
+
+        <input class ="input-field" placeholder="Enter your Name" v-model="newGuest.name"><br><br>
+
+        <textarea placeholder="Leave a Message" v-model="newGuest.message"></textarea><br><br>
+
+        <button v-on:click="addGuest">Submit</button>
+
+      </form>
+
+    </div>
 
 
   </div>
