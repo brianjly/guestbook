@@ -12,6 +12,6 @@ h1{
 }
 
 .messages{
-  height:800px;
+  height:400px;
   overflow:auto;
 }
