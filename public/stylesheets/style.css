@@ -10,3 +10,8 @@ a {
 h1{
   font-size: 3.0em;
 }
+
+.messages{
+  height:800px;
+  overflow:auto;
+}
